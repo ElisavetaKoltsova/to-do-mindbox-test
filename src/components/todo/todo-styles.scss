@@ -88,3 +88,39 @@ footer button {
 footer button:hover {
   color: #ffffff;
 }
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #adddf3;
+  margin-right: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+  position: relative;
+  background-color: white;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #adddf3;
+  border-color: #adddf3;
+}
+
+input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+input[type="checkbox"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(173, 221, 243, 0.4);
+}

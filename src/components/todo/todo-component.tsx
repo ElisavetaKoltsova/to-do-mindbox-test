@@ -5,6 +5,7 @@ import { TodosList } from './todos-list';
 export const TodoComponent = (): JSX.Element => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [newTodo, setNewTodo] = useState<string>('');
+  const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
 
   // Добавление новой задачи
   const handleAddTodoButtonClick = () => {
@@ -31,6 +32,13 @@ export const TodoComponent = (): JSX.Element => {
     setTodos(todos.filter(todo => !todo.completed));
   };
 
+  // Фильтрация задач
+  const filteredTodos = todos.filter(todo => {
+    if (filter === 'active') return !todo.completed;
+    if (filter === 'completed') return todo.completed;
+    return true;
+  });
+
   // Количество оставшихся задач
   const remainingTasks = todos.filter(todo => !todo.completed).length;
 
@@ -47,14 +55,14 @@ export const TodoComponent = (): JSX.Element => {
         <button onClick={handleAddTodoButtonClick}>Add</button>
       </div>
       <div>
-        {TodosList({todos, onToggele: handleTodoCompletionCheckBoxToggle})}
+        {TodosList({todos: filteredTodos, onToggele: handleTodoCompletionCheckBoxToggle})}
       </div>
       <footer>
         <p>{remainingTasks} todos left</p>
         <div>
-          <button>All</button>
-          {/* <button onClick={}>Active</button> */}
-          <button>Completed</button>
+          <button onClick={() => setFilter('all')}>All</button>
+          <button onClick={() => setFilter('active')}>Active</button>
+          <button onClick={() => setFilter('completed')}>Completed</button>
         </div>
         <button onClick={handleClearCompletedButtonClick}>Clear completed</button>
       </footer>
