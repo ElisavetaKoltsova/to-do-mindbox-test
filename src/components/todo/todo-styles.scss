@@ -1,0 +1,90 @@
+// Основные стили для todo-приложения
+.todo-app {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  color: #adddf3;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+input[type="text"] {
+  padding: 12px;
+  margin-bottom: 15px;
+  width: 100%;
+  border-radius: 25px;
+  border: 1px solid #dcdcdc;
+  font-size: 1.1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: #adddf3;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #adddf3;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #9ec1d1;
+  color: white;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  font-size: 1.2rem;
+}
+
+input[type="checkbox"] {
+  margin-right: 15px;
+}
+
+li.completed {
+  text-decoration: line-through;
+  color: #dcdcdc;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+
+footer button {
+  background-color: transparent;
+  color: #adddf3;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+footer button:hover {
+  color: #ffffff;
+}
