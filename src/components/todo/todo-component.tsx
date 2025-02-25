@@ -54,6 +54,13 @@ export const TodoComponent = (): JSX.Element => {
         />
         <button onClick={handleAddTodoButtonClick}>Add</button>
       </div>
+      {todos.length ?
+        (<div className="filter-container">
+        <span>
+          {filter}
+        </span>
+      </div>) : ''
+      }
       <div>
         {TodosList({todos: filteredTodos, onToggele: handleTodoCompletionCheckBoxToggle})}
       </div>

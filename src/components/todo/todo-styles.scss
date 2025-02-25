@@ -124,3 +124,24 @@ input[type="checkbox"]:focus {
   outline: none;
   box-shadow: 0 0 0 3px rgba(173, 221, 243, 0.4);
 }
+
+.filter-container {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filter-container span {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #adddf3;
+  color: white;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.filter-container span:hover {
+  background-color: #9ec1d1;
+}
